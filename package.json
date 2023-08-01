@@ -22,5 +22,9 @@
     "react-markdown": "^8.0.7",
     "swiper": "^10.0.4",
     "tailwindcss": "^3.3.3"
+  },
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "shelljs": "^0.8.5"
   }
 }

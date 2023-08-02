@@ -1,4 +1,12 @@
 ---
+import PictureResponsive from "../components/PictureResponsive";
+import SwiperSlider from "../components/SwiperSlider";
+
+//fetching data using this method within the index.astro file will statically render at build time (no dynamic updates)
+const response = await fetch(
+  "http://hipsum.co/api/?type=hipster-centric&sentences=10"
+);
+const data = await response.json();
 ---
 
 <html lang="en">
@@ -7,6 +15,22 @@
     <meta name="viewport" content="width=device-width" />
   </head>
   <body>
-    <h1>CNCC Override Theme 1.0</h1>
+    <div class="cncc-container bg-slate-50 p-8">
+      <h1 class="text-8xl py-8">CNCC Override Theme 1.0</h1>
+      <p>{data}</p>
+      <PictureResponsive
+        childClass="my-8 w-full h-auto"
+        imageType="fluid"
+        domain="assets.vogue.com"
+        copilotid="647e25334c9f8f331d8b7c08"
+        width={1020}
+        widthList={[510, 780, 1020, 1500, 2040]}
+        height={359}
+        fileName={"vogue-x-disney"}
+        alttext={"This is some alt text"}
+        loading={"lazy"}
+      />
+      <SwiperSlider client:load />
+    </div>
   </body>
 </html>

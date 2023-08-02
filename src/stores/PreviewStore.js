@@ -3,7 +3,7 @@ import { atom, onMount, task } from "nanostores";
 
 export const $data = atom([]);
 
-// Uncooment the below to set up Preview Mode
+// Uncomment the below to set up dynamic data for Preview Mode
 // onMount($data, () => {
 //   task(async () => {
 //     const response = await fetch(STRAPI_API);

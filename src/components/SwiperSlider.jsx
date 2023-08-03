@@ -1,6 +1,13 @@
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  Mousewheel,
+  A11y,
+} from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import PictureResponsive from "../components/PictureResponsive";
 
 // Import Swiper styles
 import "swiper/css";
@@ -13,10 +20,11 @@ export default function SwiperSlider() {
 
   return (
     <Swiper
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      modules={[Navigation, Pagination, Scrollbar, A11y, Mousewheel]}
       spaceBetween={50}
       slidesPerView={3}
       navigation
+      mousewheel={{ forceToAxis: true }}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
@@ -25,9 +33,17 @@ export default function SwiperSlider() {
       {sampleArray.map((item, index) => {
         return (
           <SwiperSlide key={index}>
-            <div className="h-96 flex justify-center items-center border-4">
-              Slide {item}
-            </div>
+            <PictureResponsive
+              childClass="w-full h-auto"
+              imageType="fixed"
+              domain="media.allure.com"
+              copilotid="607379aab0238890b35989ed"
+              width={960}
+              height={1435}
+              fileName={"clouds"}
+              alttext={"This is some alt text"}
+              loading={"lazy"}
+            />
           </SwiperSlide>
         );
       })}

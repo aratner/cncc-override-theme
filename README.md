@@ -4,12 +4,14 @@ Quick start toolkit for building Interactive Overrides in Copilot.
 
 ## What's Inside?
 
-- Astro
-- React
-- Tailwind
-- React Markdown
-- Swiper
-- Nanostores
+- [Astro](https://docs.astro.build/en/getting-started/) - Static site generator
+- [React](https://react.dev/) - UI framework
+  - [Radix](https://www.radix-ui.com/) - Component library
+  - [React Markdown](https://github.com/remarkjs/react-markdown)
+  - [Swiper](https://swiperjs.com/)
+- [Tailwind](https://tailwindcss.com/docs/installation) - Styling
+  - [Fluid Type Plugin](https://github.com/davidhellmann/tailwindcss-fluid-type)
+- [Nanostores](https://github.com/nanostores/nanostores) - State manager
 
 ## Start A New Project
 
@@ -40,7 +42,7 @@ Inside of your project, you'll see the following folders and files:
 ## Useful Components
 
 - `PictureResponsive` - Responsive images for Copilot
-- `Swiper` - Open source slider library
+- `Swiper` - Carousel
 
 ## Commands
 

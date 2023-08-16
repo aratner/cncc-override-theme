@@ -79,10 +79,3 @@ node unwrapper.js
 #### PreviewStore
 
 #### Building For Preview
-
-Update `astro.config.mjs`
-
-```
-outDir: `../../public/${folderName}/preview`,
-build: { assetsPrefix: `https://interactive.[BRAND].com/${folderName}/preview/`}
-```

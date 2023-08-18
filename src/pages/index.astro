@@ -1,5 +1,6 @@
 ---
 import PictureResponsive from "../components/PictureResponsive";
+import VideoInline from "../components/VideoInline";
 import SwiperSlider from "../components/SwiperSlider";
 
 //Data fetching example: https://docs.astro.build/en/guides/data-fetching/
@@ -16,23 +17,42 @@ const data = await response.json();
   </head>
   <body>
     <div class="cncc-container bg-slate-50 px-8 pb-32 pt-8 text-justify">
-      <h1 class="py-8 text-center text-8xl">CNCC Override Theme 1.0</h1>
-      <p class="mx-auto max-w-2xl pb-24 text-center">{data}</p>
-      <h2 class="pb-8 text-center text-4xl">Picture Responsive</h2>
-      <PictureResponsive
-        childClass="mb-16 w-full h-auto"
-        imageType="fluid"
-        domain="media.allure.com"
-        copilotid="6073267d482d54c341164d05"
-        width={1920}
-        widthList={[480, 960, 1440, 1920]}
-        height={359}
-        fileName={"clouds"}
-        alttext={"This is some alt text"}
-        loading={"lazy"}
-      />
-      <h2 class="pb-8 text-center text-4xl">Swiper Slider</h2>
-      <SwiperSlider client:load />
+      <header>
+        <h1 class="py-8 text-center text-8xl">CNCC Override Theme 1.0</h1>
+        <p class="mx-auto max-w-2xl pb-24 text-center">{data}</p>
+      </header>
+      <section>
+        <h2 class="pb-8 text-center text-4xl">Picture Responsive</h2>
+        <PictureResponsive
+          childClass="mb-16 w-full h-auto"
+          imageType="fluid"
+          domain="media.allure.com"
+          copilotid="6073267d482d54c341164d05"
+          width={1920}
+          widthList={[480, 960, 1440, 1920]}
+          height={1200}
+          fileName={"clouds"}
+          alttext={"This is some alt text"}
+          loading={"lazy"}
+        />
+      </section>
+      <section>
+        <h2 class="pb-8 text-center text-4xl">Swiper Slider</h2>
+        <SwiperSlider client:load />
+      </section>
+      <section>
+        <h2 class="pb-8 pt-16 text-center text-4xl">Video Inline</h2>
+        <VideoInline
+          domain="assets.vogue.com"
+          copilotPosterId="644ac5f7c2a3004981ecd0c4"
+          copilotClipId="644983eb82b43b68a319bca6"
+          fileName="video-example"
+          quality="1080p"
+          width={900}
+          height={720}
+          customClass="w-full h-auto mx-auto max-w-2xl"
+        />
+      </section>
     </div>
   </body>
 </html>

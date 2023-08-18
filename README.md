@@ -41,8 +41,9 @@ Inside of your project, you'll see the following folders and files:
 
 ## Useful Components
 
-- `PictureResponsive` - Responsive images for Copilot
-- `Swiper` - Carousel
+- `PictureResponsive` - Responsive picture element for Copilot photos
+- `VideoInline` - Inline video element for Copilot clips
+- `Swiper` - Content slider
 
 ## Commands
 
@@ -66,7 +67,7 @@ outDir: `../../public/${folderName}`,
 build: { assetsPrefix: `https://interactive.[BRAND].com/${folderName}/`}
 ```
 
-Run the Unwrapper script (removes body + head tags)
+Run the Unwrapper script (removes html, head, title, meta, body tags)
 
 ```
 node unwrapper.js

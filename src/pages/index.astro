@@ -1,6 +1,6 @@
 ---
 import PictureResponsive from "../components/PictureResponsive";
-import VideoInline from "../components/VideoInline";
+import VideoClip from "../components/VideoClip";
 import SwiperSlider from "../components/SwiperSlider";
 
 //Data fetching example: https://docs.astro.build/en/guides/data-fetching/
@@ -40,11 +40,10 @@ const data = await response.json();
         <SwiperSlider client:load />
       </section>
       <section>
-        <h2 class="pb-8 pt-16 text-center text-4xl">Video Inline</h2>
-        <VideoInline
-          domain="assets.vogue.com"
-          copilotPosterId="644ac5f7c2a3004981ecd0c4"
-          copilotClipId="644983eb82b43b68a319bca6"
+        <h2 class="pb-8 pt-16 text-center text-4xl">Video Clip</h2>
+        <VideoClip
+          copilotPosterUrl="https://assets.vogue.com/photos/64498432a60499e2993fb7f2/master/w_800,h_800,c_limit/644983eb82b43b68a319bca7_sonali%20ohrie_1_autoxauto_00001.jpg"
+          copilotClipUrl="https://assets.vogue.com/clips/644983eb82b43b68a319bca6/original/pass/sonali%20ohrie_1.mp4?format=original"
           fileName="video-example"
           quality="1080p"
           width={900}

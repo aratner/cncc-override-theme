@@ -1,9 +1,8 @@
 import type { CSSProperties } from "react";
 
-type VideoInlineProps = {
-  domain: string;
-  copilotPosterId?: string;
-  copilotClipId: string;
+type VideoClipProps = {
+  copilotPosterUrl: string;
+  copilotClipUrl: string;
   fileName: string;
   quality: "360p" | "480p" | "720p" | "1080p" | "1440p";
   width: number;
@@ -18,10 +17,9 @@ type VideoInlineProps = {
   style?: CSSProperties;
 };
 
-export default function VideoInline({
-  domain,
-  copilotPosterId,
-  copilotClipId,
+export default function VideoClip({
+  copilotPosterUrl,
+  copilotClipUrl,
   fileName,
   quality = "720p",
   width,
@@ -34,7 +32,13 @@ export default function VideoInline({
   preload = "auto",
   customClass,
   style,
-}: VideoInlineProps) {
+}: VideoClipProps) {
+  const regexID = /\/photos\/([a-f0-9]+)\//;
+  const regexClipID = /\/clips\/([a-f0-9]+)\//;
+  const regexDomain = /^https?:\/\/([^/]+)/;
+  const [, copilotPosterId] = regexID.exec(copilotPosterUrl) ?? [];
+  const [, copilotClipId] = regexClipID.exec(copilotClipUrl) ?? [];
+  const [, domain] = regexDomain.exec(copilotClipUrl) ?? [];
   return (
     <video
       className={customClass}

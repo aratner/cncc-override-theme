@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 
-interface VideoInlineProps {
+type VideoInlineProps = {
   domain: string;
   copilotPosterId?: string;
   copilotClipId: string;
@@ -16,7 +16,7 @@ interface VideoInlineProps {
   preload?: "auto" | "metadata" | "none";
   customClass?: string;
   style?: CSSProperties;
-}
+};
 
 export default function VideoInline({
   domain,

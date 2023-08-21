@@ -1,8 +1,8 @@
 import { useStore } from "@nanostores/react";
-import { $data } from "../stores/PreviewStore";
-import HeroBlock from "./blocks/HeroBlock.jsx";
-import CopyBlock from "./blocks/CopyBlock.jsx";
-import GridBlock from "./blocks/GridBlock.jsx";
+import { $data } from "../../stores/PreviewStore";
+import HeroBlock from "./blocks/HeroBlock";
+import CopyBlock from "./blocks/CopyBlock";
+import GridBlock from "./blocks/GridBlock";
 
 const components = {
   "blocks.hero-image": HeroBlock,
@@ -15,7 +15,7 @@ export default function DynamicZone() {
   return (
     <>
       <header>
-        <h1 class="text-6xl pt-8 text-center font-sans font-base tracking-tight">
+        <h1 className="font-base pt-8 text-center font-sans text-6xl tracking-tight">
           {layout.title && layout.title}
         </h1>
       </header>

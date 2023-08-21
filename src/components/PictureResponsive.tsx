@@ -1,11 +1,10 @@
 import type { CSSProperties } from "react";
 
-interface PictureResponsiveProps {
+type PictureResponsiveProps = {
   imageType: "fixed" | "fluid";
   containerClass?: string;
   childClass?: string;
-  domain: string;
-  copilotid: string;
+  copilotImageUrl: string;
   fileName: string;
   width: number;
   widthList?: number[];
@@ -14,19 +13,19 @@ interface PictureResponsiveProps {
   style?: CSSProperties;
   alttext: string;
   loading?: "lazy" | "eager";
-}
+};
 
 function createSrcSet(
   domain: string,
   copilotid: string,
   fileName: string,
   widthList: number[],
-  fileExtension: string
+  fileExtension: string,
 ) {
   return widthList
     .map(
       (width) =>
-        `https://${domain}/photos/${copilotid}/w_${width}/${fileName}.${fileExtension} ${width}w`
+        `https://${domain}/photos/${copilotid}/w_${width}/${fileName}.${fileExtension} ${width}w`,
     )
     .join(", ");
 }
@@ -35,8 +34,7 @@ export default function PictureResponsive({
   imageType,
   containerClass,
   childClass,
-  domain,
-  copilotid,
+  copilotImageUrl,
   fileName,
   width,
   widthList,
@@ -46,6 +44,10 @@ export default function PictureResponsive({
   alttext,
   loading,
 }: PictureResponsiveProps) {
+  const regexID = /\/photos\/([a-f0-9]+)\//;
+  const regexDomain = /^https?:\/\/([^/]+)/;
+  const [, copilotid] = regexID.exec(copilotImageUrl) ?? [];
+  const [, domain] = regexDomain.exec(copilotImageUrl) ?? [];
   const fluidSrcSet = (
     <>
       <source
@@ -55,7 +57,7 @@ export default function PictureResponsive({
           copilotid,
           fileName,
           widthList ?? [],
-          "avif"
+          "avif",
         )}
         sizes={sizes}
       />
@@ -66,7 +68,7 @@ export default function PictureResponsive({
           copilotid,
           fileName,
           widthList ?? [],
-          "webp"
+          "webp",
         )}
         sizes={sizes}
       />
@@ -77,7 +79,7 @@ export default function PictureResponsive({
           copilotid,
           fileName,
           widthList ?? [],
-          "jpg"
+          "jpg",
         )}
         sizes={sizes}
       />
@@ -89,15 +91,15 @@ export default function PictureResponsive({
       <source
         srcSet={`https://${domain}/photos/${copilotid}/w_${width}/${fileName}.avif 1x, 
                https://${domain}/photos/${copilotid}/w_${
-          width * 2
-        }/${fileName}.avif 2x`}
+                 width * 2
+               }/${fileName}.avif 2x`}
         type="image/avif"
       />
       <source
         srcSet={`https://${domain}/photos/${copilotid}/w_${width}/${fileName}.webp 1x, 
                https://${domain}/photos/${copilotid}/w_${
-          width * 2
-        }/${fileName}.webp 2x`}
+                 width * 2
+               }/${fileName}.webp 2x`}
         type="image/webp"
       />
     </>

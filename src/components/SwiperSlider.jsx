@@ -36,8 +36,7 @@ export default function SwiperSlider() {
             <PictureResponsive
               childClass="w-full h-auto"
               imageType="fixed"
-              domain="media.allure.com"
-              copilotid="607379aab0238890b35989ed"
+              copilotImageUrl="https://media.allure.com/photos/607379aab0238890b35989ed/original/pass/chuttersnap-vhmzI0vs3N8-unsplash.jpg?format=original"
               width={960}
               height={1435}
               fileName={"clouds"}

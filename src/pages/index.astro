@@ -2,6 +2,7 @@
 import PictureResponsive from "../components/PictureResponsive";
 import VideoClip from "../components/VideoClip";
 import SwiperSlider from "../components/SwiperSlider";
+import CNEScriptPlayer from "../components/CNEScriptPlayer";
 
 //Data fetching example: https://docs.astro.build/en/guides/data-fetching/
 const response = await fetch(
@@ -49,6 +50,15 @@ const data = await response.json();
           width={900}
           height={720}
           customClass="w-full h-auto mx-auto max-w-2xl"
+        />
+      </section>
+      <section>
+        <h2 class="pb-8 pt-16 text-center text-4xl">CNE Script Player</h2>
+        <CNEScriptPlayer
+          client:visible
+          videoId="65e989a84e967561ce6f563f"
+          queryParameters="autoplay=1&muted=1&adsDisabled=1&continuousPlay=0&hideHoverTitle=1&hidePosterTitle=1&loopVideo=1"
+          containerClass="mx-auto aspect-video w-3/4 overflow-hidden rounded-3xl"
         />
       </section>
     </div>

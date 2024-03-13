@@ -16,18 +16,18 @@
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "astro": "^4.5.2",
-    "nanostores": "^0.9.3",
+    "nanostores": "^0.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-markdown": "^8.0.7",
-    "swiper": "^10.2.0",
+    "react-markdown": "^9.0.1",
+    "swiper": "^11.0.7",
     "tailwindcss": "^3.3.3",
     "tailwindcss-fluid-type": "^2.0.3"
   },
   "devDependencies": {
     "cheerio": "^1.0.0-rc.12",
     "prettier": "^3.0.2",
-    "prettier-plugin-astro": "^0.11.1",
+    "prettier-plugin-astro": "^0.13.0",
     "prettier-plugin-tailwindcss": "^0.5.3",
     "shelljs": "^0.8.5"
   }
